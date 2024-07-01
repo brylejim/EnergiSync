@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>EnergiSync</title>
+      <link rel="icon" href="images/logo/logo.png" type="image/x-icon">
+      <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+      <main>
+        <div class="signinpage">
+          <div class="inner-box">
+            <div class="forms-wrap">
+              <form action="Dashboard.html" autocomplete="off" class="sign-in-form"> <!-- ACTION MIGHT EITHER BE USER DASHBOARD OR ADMIN DASHBOARD -->
+                <div class="trademark">
+                    <img src="/images/logo/esynclogo.png">
+                </div>
+                <!-- NEED DATABASE (LOG IN)-->
+                <div class="actual-form">
+                  <div class="input-wrap">
+                    <input
+                      type="text"
+                      class="input-field"
+                      autocomplete="off"
+                      placeholder="Account Number"
+                      required
+                    />
+                  </div>
+                  <div class="input-wrap">
+                    <input
+                      type="password"
+                      class="input-field"
+                      autocomplete="off"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <input type="submit" value="SIGN IN" class="sign-btn" />
+                  <p class="text btnpopupReset" onclick="togglePopup('popupRes1')">Forgot password?</p>
+                </div>
+              </form> 
+              <!-- NEED DATABASE (FORGOT PASSWORD)-->
+              <div class="forgotpass">
+                <div id="popupRes1" class="resetpass"> 
+                  <form action="" method="" class="popup-box"> 
+                      <h2>Find your account</h2>
+                      <p>Enter your email to reset your password</p>
+                      <input type="email" class="form-input" placeholder="Email" autocomplete="off">
+                      <div class="buttons">
+                          <button class="btnCancel" onclick="closePopup('popupCancel1')">Cancel</button>
+                          <button type="submit" class="btnContinue" onclick="">Continue</button>
+                      </div>
+                    </form> 
+                </div> 
+              </div>
+
+            </div>
+            <div class="carousel">
+              <div class="slideshow-container">
+                <div class="mySlides fade">
+                  <img src="images/photo/z44a.png" style="height: 32rem">
+                  <div class="text">Monitor your consumption with ease</div>
+                </div>
+                <div class="mySlides fade">
+                  <img src="images/photo/s2.png" style="height: 32rem">
+                  <div class="text">View your monthly predicted bill</div>
+                </div>
+                <div class="mySlides fade">
+                  <img src="images/photo/s1.png" style="height: 32rem">
+                  <div class="text">Stay updated on latest news</div>
+                </div>
+                </div>
+                <br>
+                <div class="period">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- JAVASCRIPT FILE -->
+      <script src="script.js"></script>
+      <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 6000); 
+        }
+      </script>
+      <script>
+        function togglePopup(popupRes1) {
+            var btnpopupReset = document.getElementById(popupRes1);
+            btnpopupReset.classList.toggle("show");
+        }
+        function closePopup(popupCancel1) {
+            var btnCancel = document.getElementById(popupRes1);
+            btnCancel.classList.remove("show");
+        }
+      </script>
+  </body>
+</html>

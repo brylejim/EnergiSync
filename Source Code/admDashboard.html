@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard ︱ EnergiSync</title>
+        <link rel="icon" href="images/logo/logo.png" type="image/x-icon">
+        <!-- CSS FILE -->
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <!-- FONTS AND ICONS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <!-- SIDEBAR -->
+        <section id="sidebar">
+            <ul class="menu">
+                <li>
+                    <a href="admDashboard.html" class="active">
+                        <img src="images/icons/dashboard.svg">
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAccount.html">
+                        <img src="images/icons/account.svg">
+                        <span class="item">Accounts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admNews.html">
+                        <img src="images/icons/news.svg">
+                        <span class="item">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admFeedback.html">
+                        <img src="images/icons/feedback.svg">
+                        <span class="item">Feedback</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAbout.html">
+                        <img src="images/icons/about.svg">
+                        <span class="item">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admHelp.html">
+                        <img src="images/icons/faq.svg">
+                        <span class="item">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- HEADER -->
+        <div class="block"></div>
+        <header id="hdr">
+            <section id="topbar">
+                <a href="admDashboard.html" class="brand">
+                    <img src="images/logo/esynclogo.png">
+                </a>
+                <div class="menu-btn">
+                    <img src="images/icons/menu.svg">              
+                </div>
+                <div class="section">
+                    <h4>DASHBOARD</h4> 
+                </div>
+                <div class="nav">
+                    <a href="admCalendar.html">
+                        <img class="calendar-icon" src="images/icons/calendar.svg">
+                    </a>
+                    <a href="admNotifications.html">
+                        <img class="notification-icon" src="images/icons/notification.svg">
+                    </a>
+                    <div class="nav profile-btn">
+                        <img src="images/icons/profile.svg">
+                    </div>
+                    <div class="profile-preview">
+                        <div class="user-profile">
+                            <img src="images/icons/user.svg">
+                            <h3 class="name">Bryle Jimenez</h3>
+                        </div>
+                        <div>
+                            <a href="admAccountAndSettings.html" class="acc-and-set">Account and settings</a>
+                        </div>
+                        <div>
+                            <a href="SignIn.html" id="btn2" class="signout-btn">Sign out</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <!-- CONTENT -->
+        <section id="content">
+            <main class="admdashboard">
+                <div class="box-container">
+                    <ul class="info">
+                        <li class="numberofusers">
+                            <div class="icon">
+                                <img src="images/icons/users.svg">
+                            </div>
+                            <div class="text">
+                                <h3>5</h3>
+                                <span>Number of users</span> <!-- NEED DATABASE -->
+                            </div>
+                        </li>
+                        <li class="thismonth">
+                            <div class="icon">
+                                <img src="images/icons/usage.svg">
+                            </div>
+                            <div class="text">
+                                <h3>1420 kWh</h3> <!-- NEED DATABASE -->
+                                <span>This month</span>
+                            </div>
+                        </li>
+                        <li class="prevmonth">
+                            <div class="icon">
+                                <img src="images/icons/previous.svg">
+                            </div>
+                            <div class="text">
+                                <h3>2100 kWh</h3> <!-- NEED DATABASE -->
+                                <span>Previous month</span>
+                            </div>
+                        </li>
+                        <li class="outagealert">
+                            <div class="icon">
+                                <img src="images/icons/alert.svg">
+                            </div>
+                            <div class="text">
+                                <h3>0</h3> <!-- NEED DATABASE -->
+                                <span>Outage Alert</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div> 
+                <!-- NEED DATABASE (LIST OF USERS IN TABLE) -->
+                <div class="board">
+                    <table width="100%">
+                        <thread>
+                            <tr>
+                                <td>NAME</td>
+                                <td>EMAIL ADDRESS</td>
+                                <td>DEFAULT PASSWORD</td>
+                                <td>UNIT</td>
+                            </tr>
+                        </thread>
+                        <tbody>
+                            <tr>
+                                <td class="people">
+                                    <img src="images/icons/userr.svg" alt="">
+                                    <div class="people-de">
+                                        <h5>Paulo Papa</h5>
+                                        <p>02000481732</p>
+                                    </div>
+                                </td>
+                                <td class="people-des">
+                                    <h5>papa.247183@yahoo.com</h5>
+                                </td>
+                                <td class="people-desq">
+                                    <h5>papa2024</h5>
+                                </td>
+                                <td class="unit">
+                                    <h5>101</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td class="people">
+                                    <img src="images/icons/userr.svg" alt="">
+                                    <div class="people-de">
+                                        <h5>Maverick Laredo</h5>
+                                        <p>02000840163</p>
+                                    </div>
+                                </td>
+                                <td class="people-des">
+                                    <h5>laredo.840163@yahoo.com</h5>
+                                </td>
+                                <td class="people-desq">
+                                    <h5>laredo2024</h5>
+                                </td>
+                                <td class="unit">
+                                    <h5>102</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td class="people">
+                                    <img src="images/icons/userr.svg" alt="">
+                                    <div class="people-de">
+                                        <h5>Dandel Toca</h5>
+                                        <p>02000392157</p>
+                                    </div>
+                                </td>
+                                <td class="people-des">
+                                    <h5>toca.392157@yahoo.com</h5>
+                                </td>
+                                <td class="people-desq">
+                                    <h5>toca2024</h5>
+                                </td>
+                                <td class="unit">
+                                    <h5>103</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td class="people">
+                                    <img src="images/icons/userr.svg" alt="">
+                                    <div class="people-de">
+                                        <h5>Matrix Belardo</h5>
+                                        <p>02000181467</p>
+                                    </div>
+                                </td>
+                                <td class="people-des">
+                                    <h5>belardo.247183@yahoo.com</h5>
+                                </td>
+                                <td class="people-desq">
+                                    <h5>belardo2024</h5>
+                                </td>
+                                <td class="unit">
+                                    <h5>104</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td class="people">
+                                    <img src="images/icons/userr.svg" alt="">
+                                    <div class="people-de">
+                                        <h5>Bryle Jimenez</h5>
+                                        <p>02000348295</p>
+                                    </div>
+                                </td>
+                                <td class="people-des">
+                                    <h5>jimenez.348295@yahoo.com</h5>
+                                </td>
+                                <td class="people-desq">
+                                    <h5>jimenez2024</h5>
+                                </td>
+                                <td class="unit">
+                                    <h5>105</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </main>
+        </section>
+        <!-- JAVASCRIPT FILE -->
+        <script src="script.js"></script>
+    </body>
+</html>
