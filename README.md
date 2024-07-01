@@ -1,1 +1,1 @@
-# EnergiSync
+EnergiSync web application is a digital platform integrated with an electricity submetering device. It is made for consumers, who in a post-paid systems, to monitor their real-time electricity consumption anytime, anywhere. The aim of this project is to better the accuracy of how meter readings of a household were accumulated. Additionally, its objective is to better the transparency of how consumers were billed.  
