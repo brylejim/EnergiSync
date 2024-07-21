@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Account and Settings ︱ EnergiSync</title>
+        <link rel="icon" href="media/logo/energisynclogo.png" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <!-- SIDEBAR -->
+        <section id="sidebar">
+            <ul class="menu">
+                <li>
+                    <a href="admDashboard.html">
+                        <img src="media/icons/dashboard.svg">
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAccount.html">
+                        <img src="media/icons/account.svg">
+                        <span class="item">Accounts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admNews.html">
+                        <img src="media/icons/news.svg">
+                        <span class="item">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admFeedback.html">
+                        <img src="media/icons/feedback.svg">
+                        <span class="item">Feedback</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAbout.html">
+                        <img src="media/icons/about.svg">
+                        <span class="item">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admHelp.html">
+                        <img src="media/icons/help.svg">
+                        <span class="item">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- HEADER -->
+        <div class="block"></div>
+        <header id="hdr">
+            <section id="topbar">
+                <a href="admDashboard.html" class="brand">
+                    <img src="media/logo/energisynclogo.png">
+                </a>
+                <div class="menu-btn">
+                    <img src="media/icons/menu.svg">              
+                </div>
+                <div class="section">
+                    <h4>ACCOUNT AND SETTINGS</h4> 
+                </div>
+                <div class="nav">
+                    <a href="admCalendar.html">
+                        <img class="calendar-icon" src="media/icons/calendar.svg">
+                    </a>
+                    <a href="admNotifications.html">
+                        <img class="notification-icon" src="media/icons/notification.svg">
+                    </a>
+                </div>
+            </section>
+        </header>
+        <!-- CONTENT -->
+        <section id="content">
+            <div class="accountandsettings">
+                <div class="leftbox admleft">
+                    <nav>
+                        <hr id="accinfo">
+                        <a onclick="tabs(0)" class="tab active">YOUR INFORMATION</a>
+                        <hr id="sec">
+                        <a onclick="tabs(1)" class="tab">Security</a>
+                        <hr id="tandp">
+                        <a onclick="tabs(2)" class="tab">TERMS AND LEGAL POLICIES</a>
+                    </nav>
+                </div>
+                <div class="rightbox">
+                    <div class="profile tabShow">
+                        <h1>Account Info</h1>
+                        <h2>Name</h2>
+                        <div class="value">
+                            <input type="text" id="user-name" disabled>
+                        </div>
+                        <h2>Email</h2>
+                        <div class="value">
+                            <input type="text" id="user-email" disabled>
+                        </div>
+                    </div>
+                    <div class="security tabShow" style="display: block;">
+                        <h1>Password</h1>
+                        <form>
+                            <h2>Change password</h2>
+                            <div class="input-wrap">
+                                <input type="password" id="oldPasswordInp" class="input cpassword" placeholder="Current password" autocomplete="off" spellcheck="false" required disabled>
+                                <div class="vl"></div>
+                                <img id="notvisible1" src="images/icons/notvisible.svg">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="password" id="newPasswordInp" class="input cpassword" placeholder="New password" autocomplete="off" spellcheck="false" required disabled>
+                                <div class="vl"></div>
+                                <img id="notvisible2" src="images/icons/notvisible.svg">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="password" id="confirmPasswordInp" class="input cpassword" placeholder="Confirm new password" autocomplete="off" spellcheck="false" required disabled>
+                                <div class="vl"></div>
+                                <img id="notvisible3" src="images/icons/notvisible.svg">
+                            </div>
+                            <button type="button" id="changePassBtn" class="btn" disabled>Update</button>
+                        </form>
+                    </div>
+                    <div class="privacy tabShow" style="display: block;">
+                        <h1>Terms and Policies</h1>
+                        <div>
+                            <h2 class="terms">Terms of service</h2>
+                            <p></p>
+                        </div>
+                        <div>
+                            <h2 class="policy">Privacy policy</h2>
+                            <p></p>
+                        </div>
+                        <div>
+                            <h2 class="about">About</h2>
+                            <p></p>
+                        </div>
+                    </div>
+                    <button type="button" class="signout-btn" id="btn3">Sign out</button>
+                </div>
+            </div>
+        </section>
+        <!-- JAVASCRIPT -->
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+            import { getDatabase, get, ref, update, child } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+            import { getAuth, onAuthStateChanged, EmailAuthProvider, signOut, updatePassword, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+            const firebaseConfig = {
+              apiKey: "AIzaSyB9X9ctMpLpr0x5o5tnpyK1R5PSuHQOisQ",
+              authDomain: "energisync-be1af.firebaseapp.com",
+              databaseURL: "https://energisync-be1af-default-rtdb.asia-southeast1.firebasedatabase.app",
+              projectId: "energisync-be1af",
+              storageBucket: "energisync-be1af.appspot.com",
+              messagingSenderId: "742138278060",
+              appId: "1:742138278060:web:578a5c1aefbe7062706f09",
+              measurementId: "G-11206WP1SD"
+            };
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+            const db = getDatabase();
+            const auth = getAuth();
+            const dbRef = ref(db);
+
+            let oldpassbox = document.getElementById("oldPasswordInp");
+            let passbox = document.getElementById("newPasswordInp");
+            let cpassbox = document.getElementById("confirmPasswordInp");
+            let changePasswordBtn = document.getElementById("changePassBtn");
+
+            let userName = document.getElementById("user-name");
+            let userEmail = document.getElementById("user-email");
+            // USER INFO
+            onAuthStateChanged(auth, (user) => {
+                if(user) {
+                    get(child(dbRef, "Client/" + "Admin/" + user.uid))
+                    .then((snapshot) => {
+                        userName.value = snapshot.val().name;
+                        userEmail.value = snapshot.val().email;
+                    })
+                    oldpassbox.disabled = false;
+                    passbox.disabled = false;
+                    cpassbox.disabled = false;
+                    changePasswordBtn.disabled = false;
+                }
+            })
+            // CHANGE PASSWORD
+            let ChangePasswordFunc = () => {
+                if(isNullOrWhiteSpaces(oldpassbox.value) || isNullOrWhiteSpaces(passbox.value) || isNullOrWhiteSpaces(cpassbox.value)) {
+                    alert("Fill all the fields!");
+                    return;
+                }
+                if(passbox.value != cpassbox.value) {
+                    alert("Passwords doesn't match!");
+                    return;
+                }
+                const user = auth.currentUser;
+                const credentials = EmailAuthProvider.credential(
+                    user.email,
+                    oldpassbox.value
+                )
+                reauthenticateWithCredential(user, credentials).then(() => {
+                    updatePassword(user, passbox.value).then(() => {
+                        alert("Password was updated! You're about to be signed out.");
+                        SignOut();
+                    })
+                    .catch((error) => {
+                        alert("Failed to update your password!");
+                    })
+                })
+                .catch((error) => {
+                        alert("Failed to update your password! Try to check the old password you have entered.");
+                })
+            }
+            // SIGN OUT
+            let SignOut = () => {
+                signOut(auth).then(() => {
+                    sessionStorage.removeItem("user-creds");
+                    sessionStorage.removeItem("user-info");
+                    window.location.href = "SignIn.html"
+                })
+            }
+            let isNullOrWhiteSpaces = val => {
+                val = val.toString();
+                return (val == null) || (val.replaceAll("","").length < 1);
+            }
+            changePasswordBtn.addEventListener("click", ChangePasswordFunc);
+        </script>
+        <script>
+            // SIGN OUT
+            let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"))
+            let UserInfo = JSON.parse(sessionStorage.getItem("user-info"))
+
+            let SignoutBtn = document.getElementById("btn3");
+
+            let Signout = () => {
+                sessionStorage.removeItem("user-creds");
+                sessionStorage.removeItem("user-info");
+                window.location.href = "SignIn.html"
+            }
+            let CheckCred = () => {
+                if (!sessionStorage.getItem("user-creds"))
+                    window.location.href = "SignIn.html"
+            }
+            window.addEventListener("load", CheckCred);
+            SignoutBtn.addEventListener("click", Signout);
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>

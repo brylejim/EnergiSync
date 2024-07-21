@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Help ︱ EnergiSync</title>
+        <link rel="icon" href="media/logo/energisynclogo.png" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <!-- SIDEBAR -->
+        <section id="sidebar">
+            <ul class="menu">
+                <li>
+                    <a href="admDashboard.html">
+                        <img src="media/icons/dashboard.svg">
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAccount.html">
+                        <img src="media/icons/account.svg">
+                        <span class="item">Accounts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admNews.html">
+                        <img src="media/icons/news.svg">
+                        <span class="item">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admFeedback.html">
+                        <img src="media/icons/feedback.svg">
+                        <span class="item">Feedback</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAbout.html">
+                        <img src="media/icons/about.svg">
+                        <span class="item">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admHelp.html" class="active">
+                        <img src="media/icons/help.svg">
+                        <span class="item">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- HEADER -->
+        <div class="block"></div>
+        <header id="hdr">
+            <section id="topbar">
+                <a href="admDashboard.html" class="brand">
+                    <img src="media/logo/energisynclogo.png">
+                </a>
+                <div class="menu-btn">
+                    <img src="media/icons/menu.svg">              
+                </div>
+                <div class="section">
+                    <h4>HELP</h4> 
+                </div>
+                <div class="nav">
+                    <a href="admCalendar.html">
+                        <img class="calendar-icon" src="media/icons/calendar.svg">
+                    </a>
+                    <a href="admNotifications.html">
+                        <img class="notification-icon" src="media/icons/notification.svg">
+                    </a>
+                    <div class="nav profile-btn">
+                        <img src="media/icons/profile.svg">
+                    </div>
+                    <div class="profile-preview">
+                        <div class="user-profile">
+                            <img src="media/icons/user.svg">
+                            <input type="text" class="name" id="user-name" disabled>
+                        </div>
+                        <div>
+                            <a href="admAccountAndSettings.html" class="acc-and-set">Account and settings</a>
+                        </div>
+                        <div>
+                            <div id="btn2" class="signout-btn" type="button">Sign out</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <!-- CONTENT -->
+        <section id="content">
+            <div class="help">
+                <div class="label">
+                    <h3>How account creation works?</h3>
+                    <p>The admin only have the exclusive authority to create accounts for users. This process involves setting up new accounts and entering the necessary user details. Additionally, the admin can modify user details and delete accounts as needed. This centralized control allows the admin to manage user access and ensure that only authorized individuals have access to the system.</p>
+                </div>
+                <div class="label">
+                    <h3>How do I restore deleted users?</h3>
+                    <p>Deleted users cannot be restored, whether the deletion was accidental or intentional. If a user needs to regain access, you will need to create a new account for them. This means that the admin have to re-enter their details and set up their access.</p>
+                </div>
+                <div class="label">
+                    <h3>How do I change my password?</h3>
+                    <p>To change your password, navigate to the <b>Account and Settings</b> section and find <b>Security</b>. Here, you can update your password. It is recommended to create a password that is at least 8 characters long and includes a combination of uppercase and lowercase letters, numbers, and special symbols. This helps ensure your account remains secure.</p>
+                </div>
+                <div class="label">
+                    <h3>Why the consumption does not update everytime I refresh the page?</h3>
+                    <p>If your total consumption does not update immediately when you refresh the page, there might be temporary server issues. While these issues are being resolved, rest assured that your consumption is still being accurately recorded. The data will appear correctly on your interface once the issue is fixed.</p>
+                </div>
+                <div class="label">
+                    <h3>How do I retrieve the previous total consumption of my apartment?</h3>
+                    <p>Previous consumption data is not accessible through the system. The system retains only the consumption records from the current and the most recent for viewing. For records, you may need to check with your utility provider for any possible archived data.</p>
+                </div>
+            </div>
+        </section>
+        <!-- JAVASCRIPT -->
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+            import { getDatabase, get, ref, update, child } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+            import { getAuth, onAuthStateChanged, EmailAuthProvider, signOut, updatePassword, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+            const firebaseConfig = {
+              apiKey: "AIzaSyB9X9ctMpLpr0x5o5tnpyK1R5PSuHQOisQ",
+              authDomain: "energisync-be1af.firebaseapp.com",
+              databaseURL: "https://energisync-be1af-default-rtdb.asia-southeast1.firebasedatabase.app",
+              projectId: "energisync-be1af",
+              storageBucket: "energisync-be1af.appspot.com",
+              messagingSenderId: "742138278060",
+              appId: "1:742138278060:web:578a5c1aefbe7062706f09",
+              measurementId: "G-11206WP1SD"
+            };
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+            const db = getDatabase();
+            const auth = getAuth();
+            const dbRef = ref(db);
+
+            let userName = document.getElementById("user-name");
+            // CURRENT USER
+            onAuthStateChanged(auth, (user) => {
+                if(user) {
+                    get(child(dbRef, "Client/" + "Admin/" + user.uid))
+                    .then((snapshot) => {
+                        userName.value = snapshot.val().name;
+                    })
+                }
+            })
+        </script>
+        <script>
+            // SIGN OUT
+            let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"))
+            let UserInfo = JSON.parse(sessionStorage.getItem("user-info"))
+
+            let SignoutBtn = document.getElementById("btn2");
+
+            let Signout = () => {
+                sessionStorage.removeItem("user-creds");
+                sessionStorage.removeItem("user-info");
+                window.location.href = "SignIn.html"
+            }
+            let CheckCred = () => {
+                if (!sessionStorage.getItem("user-creds"))
+                    window.location.href = "SignIn.html"
+            }
+            window.addEventListener("load", CheckCred);
+            SignoutBtn.addEventListener("click", Signout);
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
