@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EnergiSync</title>
+    <link rel="icon" href="media/logo/energisynclogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="signinpage">
+        <div class="inner-box">
+          <!-- SIGN IN FORM -->
+          <div class="forms-wrap">
+            <form id="MainForm" class="sign-in-form">
+              <div class="trademark">
+                  <img src="media/logo/energisynclogo.png">
+              </div>
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input type="email" id="login-email" class="input-field" spellcheck="false" autocomplete="off" placeholder="Email" required/>
+                </div>
+                <div class="input-wrap">
+                  <input type="password" id="login-pass" class="input-field password" spellcheck="false" autocomplete="off" placeholder="Password" required/>
+                  <div class="vl"></div>
+                  <img id="notvisible" src="media/icons/hidden.svg">
+                </div>
+                <button type="submit" class="sign-btn">Sign in</button>
+                <div class="action">
+                  <label class="text btnpopupReset" onclick="togglePopup('popupRes1')">Forgot password?</label>
+                  <a href="admSignIn.html" class="adminbtn">Admin</a>
+                </div>
+              </div>
+            </form> 
+            <div class="forgotpass">
+              <div id="popupRes1" class="resetpass"> 
+                <form class="popup-box"> 
+                    <h2>Find your account</h2>
+                    <p>Enter your email to reset your password</p>
+                    <input type="email" id="email-reset" class="form-input" placeholder="Email" autocomplete="off" spellcheck="false">
+                    <div class="buttons">
+                        <button class="btnCancel" onclick="closePopup('popupCancel1')">Cancel</button>
+                        <button type="submit" id="reset" class="btnContinue">Continue</button>
+                    </div>
+                </form> 
+              </div> 
+            </div>
+          </div>
+          <!-- CAROUSEL -->
+          <div class="carousel">
+            <div class="slideshow-container">
+              <div class="mySlides">
+                <img src="media/images/carousel-img1.png" style="height: 32rem">
+                <div class="text">Monitor your consumption with ease</div>
+              </div>
+              <div class="mySlides fade">
+                <img src="media/images/carousel-img2.png" style="height: 32rem">
+                <div class="text">View your monthly predicted bill</div>
+              </div>
+              <div class="mySlides fade">
+                <img src="media/images/carousel-img3.png" style="height: 32rem">
+                <div class="text">Stay updated on latest news</div>
+              </div>
+              <br>
+              <div class="period">
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- JAVASCRIPT -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+      import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+      import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB9X9ctMpLpr0x5o5tnpyK1R5PSuHQOisQ",
+        authDomain: "energisync-be1af.firebaseapp.com",
+        databaseURL: "https://energisync-be1af-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "energisync-be1af",
+        storageBucket: "energisync-be1af.appspot.com",
+        messagingSenderId: "742138278060",
+        appId: "1:742138278060:web:578a5c1aefbe7062706f09",
+        measurementId: "G-11206WP1SD"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      // SIGN IN
+      const db = getDatabase();
+      const auth = getAuth(app);
+      const dbref = ref(db);
+
+      let emailInp = document.getElementById("login-email");
+      let passInp = document.getElementById("login-pass");
+      let MainForm = document.getElementById("MainForm");
+
+      let SignInUser = evt => {
+          evt.preventDefault();
+
+          signInWithEmailAndPassword(auth, emailInp.value, passInp.value)
+          .then((credentials) => {
+              get(child(dbref, "Client/" + "User/" + credentials.user.uid)).then((snapshot) => {
+                if(snapshot.exists){
+                  sessionStorage.setItem("user-info", JSON.stringify ({
+                    name: snapshot.val().name,
+                    meter: snapshot.val().meter,
+                    unit: snapshot.val().unit
+                  }))
+                  sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                  window.location.href = "Dashboard.html";
+                }
+              })
+              alert("Welcome! You are now signed in.")
+          })
+          .catch((error) => {
+              const errorCode = error.code;
+                  if(errorCode == "auth/invalid-credential") {
+                      alert("Email address or password is incorrect!")
+                  }
+                  else {
+                      alert("Unable to sign in.")
+                  }
+          })
+      }
+      // FORGOT PASSWORD
+      const reset = document.getElementById("reset");
+      reset.addEventListener("click", function(event){
+      event.preventDefault()
+
+        const email = document.getElementById("email-reset").value;
+
+        sendPasswordResetEmail(auth, email)
+        .then(() => {
+          alert("An email to reset your password has been sent.")
+          window.location.reload();
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+            if(errorCode == "auth/missing-email") {
+                alert("Email address missing! Enter your email address to reset your password.")
+            }
+            else {
+                alert("Failed to reset your password.")
+            }
+        });
+      })
+      MainForm.addEventListener("submit", SignInUser);
+    </script>
+    <script>
+      // SHOW/HIDE PASSWORD
+      let notvisible = document.getElementById("notvisible");
+      let password = document.getElementById("login-pass");
+
+      notvisible.onclick = function() {
+        if(password.type == "password") {
+          password.type = "text";
+          notvisible.src = "media/icons/visible.svg";
+        }
+        else {
+          password.type = "password";
+          notvisible.src = "media/icons/hidden.svg";
+        }
+      }
+    </script>
+    <script>
+      // CAROUSEL
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); 
+      }
+    </script>
+    <script>
+      // FORGOT PASSWORD POP-UP
+      function togglePopup(popupRes1) {
+          var btnpopupReset = document.getElementById(popupRes1);
+          btnpopupReset.classList.toggle("show");
+      }
+      function closePopup(popupCancel1) {
+          var btnCancel = document.getElementById(popupRes1);
+          btnCancel.classList.remove("show");
+      }
+    </script>
+            <script src="script.js"></script>
+  </body>
+</html>

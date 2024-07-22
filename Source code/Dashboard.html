@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard ︱ EnergiSync</title>
+        <link rel="icon" href="media/logo/energisynclogo.png" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    </head>
+    <body>
+        <!-- SIDEBAR -->
+        <section id="sidebar">
+            <ul class="menu">
+                <li>
+                    <a href="Dashboard.html" class="active">
+                        <img src="media/icons/dashboard.svg">
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="PaymentMediums.html">
+                        <img src="media/icons/mediums.svg">
+                        <span class="item">Payment Mediums</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="History.html">
+                        <img src="media/icons/history.svg">
+                        <span class="item">Consumption History</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="News.html">
+                        <img src="media/icons/news.svg">
+                        <span class="item">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="SaveEnergy.html">
+                        <img src="media/icons/saveenergy.svg">
+                        <span class="item">Save Energy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Feedback.html">
+                        <img src="media/icons/feedback.svg">
+                        <span class="item">Feedback</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="About.html">
+                        <img src="media/icons/about.svg">
+                        <span class="item">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Help.html">
+                        <img src="media/icons/help.svg">
+                        <span class="item">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+       <!-- HEADER -->
+       <div class="block"></div>
+       <header id="hdr">
+           <section id="topbar">
+               <a href="Dashboard.html" class="brand">
+                   <img src="media/logo/energisynclogo.png">
+               </a>
+               <div class="menu-btn">
+                   <img src="media/icons/menu.svg">              
+               </div>
+               <div class="section">
+                   <h4>DASHBOARD</h4>
+               </div>
+                <div class="nav">
+                    <a href="Calendar.html">
+                        <img class="calendar-icon" src="media/icons/calendar.svg">
+                    </a>
+                    <a href="Notifications.html">
+                        <img class="notification-icon" src="media/icons/notification.svg">
+                    </a>
+                    <div href="AccountAndSettings.html" class="nav profile-btn">
+                        <img src="media/icons/profile.svg">
+                    </div>
+                    <div class="profile-preview">
+                        <div class="user-profile">
+                            <img src="media/icons/user.svg">
+                            <input type="text" class="name" id="user-name" disabled>
+                        </div>
+                        <div>
+                            <a href="AccountAndSettings.html" class="acc-and-set">Account and settings</a>
+                        </div>
+                        <div>
+                            <div id="btn2" class="signout-btn" type="button">Sign out</div>
+                        </div>
+                    </div>
+                </div>
+           </section>
+       </header>
+        <!-- CONTENT -->
+        <main id="content">
+            <div class="dashboard">
+                <!-- PERIOD, CONSUMPTION, AND PREDICTED BILL AMOUNT -->
+                <div class="primary">
+                    <ul class="info">
+                        <li class="period">
+                            <div class="icon">
+                                <img src="media/icons/period.svg">
+                            </div>
+                            <div class="text">
+                                <h3>2024 Jun 1 - 2024 Jul 2</h3> <!-- NEED DATABASE -->
+                                <span>Billing period</span>
+                            </div>
+                        </li>
+                        <li class="consumption">
+                            <div class="icon">
+                                <img src="media/icons/usage.svg">
+                            </div>
+                            <div class="text">
+                                <h3>247 kWh</h3> <!-- NEED DATABASE -->
+                                <span>Your consumption</span>
+                            </div>
+                        </li>
+                        <li class="amount">
+                            <div class="icon">
+                                <img src="media/icons/amount.svg">
+                            </div>
+                            <div class="text">
+                                <h3>PHP 2,819.23</h3> <!-- NEED DATABASE -->
+                                <span>Approx. bill amount</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="secondary">    
+                    <!-- DAILY USAGE -->
+                    <div class="daily-usage">
+                        <button id="prevWeekBtn" class="arrow-btn">&#9664;</button>
+                        <canvas id="dailyUsageChart"></canvas>
+                        <button id="nextWeekBtn" class="arrow-btn">&#9654;</button>
+                    </div>
+                    <!-- SUMMARY (MOST RECENT CONSUMPTION HISTORY) -->
+                    <div class="summary">
+                        <header>
+                            <h5>SUMMARY</h5>
+                        </header>
+                        <div class="info">
+                            <hr>
+                            <div class="text">
+                                <p>No available data yet</p> <!-- NEED DATABASE (PREV. PERIOD - HISTORY)-->
+                            </div>
+                            <hr>
+                            <div class="text">
+                                <p>No available data yet</p> <!-- NEED DATABASE (PREV. CONSUMPTION - HISTORY)-->
+                            </div>
+                            <hr>
+                            <div class="text">
+                                <p>No available data yet</p> <!-- NEED DATABASE (PREV. PREDICTED BILL AMOUNT - HISTORY)-->
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- JAVASCRIPT -->
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+            import { getDatabase, get, ref, update, child } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+            import { getAuth, onAuthStateChanged, EmailAuthProvider, signOut, updatePassword, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+            const firebaseConfig = {
+              apiKey: "AIzaSyB9X9ctMpLpr0x5o5tnpyK1R5PSuHQOisQ",
+              authDomain: "energisync-be1af.firebaseapp.com",
+              databaseURL: "https://energisync-be1af-default-rtdb.asia-southeast1.firebasedatabase.app",
+              projectId: "energisync-be1af",
+              storageBucket: "energisync-be1af.appspot.com",
+              messagingSenderId: "742138278060",
+              appId: "1:742138278060:web:578a5c1aefbe7062706f09",
+              measurementId: "G-11206WP1SD"
+            };
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+            const db = getDatabase();
+            const auth = getAuth();
+            const dbRef = ref(db);
+
+            // CURRENT USER
+            let userName = document.getElementById("user-name");
+
+            onAuthStateChanged(auth, (user) => {
+                if(user) {
+                    get(child(dbRef, "Client/" + "User/" + user.uid))
+                    .then((snapshot) => {
+                        userName.value = snapshot.val().name;
+                    })
+                }
+            })
+        </script>
+        <script>
+            // SIGN OUT
+            let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"))
+            let UserInfo = JSON.parse(sessionStorage.getItem("user-info"))
+
+            let SignoutBtn = document.getElementById("btn2");
+
+            let Signout = () => {
+                sessionStorage.removeItem("user-creds");
+                sessionStorage.removeItem("user-info");
+                window.location.href = "SignIn.html"
+            }
+            let CheckCred = () => {
+                if (!sessionStorage.getItem("user-creds"))
+                    window.location.href = "SignIn.html"
+            }
+            window.addEventListener("load", CheckCred);
+            SignoutBtn.addEventListener("click", Signout);
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // DAILY USAGE
+            document.addEventListener('DOMContentLoaded', function () {
+            let currentWeekStart = new Date(); 
+            currentWeekStart.setHours(0, 0, 0, 0); 
+
+            const ctx = document.getElementById('dailyUsageChart').getContext('2d');
+
+            const labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; //NEED DATABASE
+            let data = [50, 75, 60, 90, 40, 85, 70]; // NEED DATABASE
+
+            const dailyUsageChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Consumption (kWh)',
+                        data,
+                        backgroundColor: '#474747',
+                        borderRadius: 5
+                    }],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 20,
+                            },
+                        },
+                        x: {
+                            grid: {
+                            display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    }
+                },
+            });
+            function getWeekDates() {
+                const labels = [];
+                const currentDate = new Date(currentWeekStart);
+                for (let i = 0; i < 7; i++) {
+                    labels.push(currentDate.toLocaleDateString('en-US', { weekday: 'short' }) + ', ' + currentDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+                    currentDate.setDate(currentDate.getDate() + 1); 
+                }
+                return labels;
+            }
+            function prevWeek() {
+                currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+                updateChart();
+            }
+            function nextWeek() {
+                currentWeekStart.setDate(currentWeekStart.getDate() + 7);
+                updateChart();
+            }
+            function updateChart() {
+                const labels = getWeekDates();
+                const newData = [50, 75, 60, 90, 40, 85, 70]; 
+                data = newData; 
+
+                dailyUsageChart.data.labels = labels;
+                dailyUsageChart.data.datasets[0].data = data;
+                dailyUsageChart.update();
+            }
+            document.getElementById('prevWeekBtn').addEventListener('click', prevWeek);
+            document.getElementById('nextWeekBtn').addEventListener('click', nextWeek);
+        });
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
