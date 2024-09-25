@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EnergiSync</title>
+    <link rel="icon" href="media/logo/energisynclogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="createaccount">
+        <div class="inner-box">
+          <!-- SIGN IN FORM -->
+          <div class="crtforms-wrap">
+            <form id="MainForm" class="crt-acc-form">
+              <a  href="SignIn.html" class="back">
+                <img src="media/icons/back.svg">
+              </a>
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input type="text" id="signup-accnumber" class="input-field" spellcheck="false" autocomplete="off" placeholder="Account number" required/>
+                </div>
+                <div class="input-wrap">
+                  <input type="email" id="signup-email" class="input-field" spellcheck="false" autocomplete="off" placeholder="Email" required/>
+                </div>
+                <div class="input-wrap">
+                  <input type="password" id="signup-pass" class="input-field password" spellcheck="false" autocomplete="off" placeholder="Password" required/>
+                  <div class="vl"></div>
+                  <img id="notvisible" src="media/icons/hidden.svg">
+                </div>
+                <button type="submit" class="create-btn">Create account</button>
+              </div>
+            </form> 
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      // SHOW/HIDE PASSWORD
+      let notvisible = document.getElementById("notvisible");
+      let password = document.getElementById("login-pass");
+
+      notvisible.onclick = function() {
+        if(password.type == "password") {
+          password.type = "text";
+          notvisible.src = "media/icons/visible.svg";
+        }
+        else {
+          password.type = "password";
+          notvisible.src = "media/icons/hidden.svg";
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

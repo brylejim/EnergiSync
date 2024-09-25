@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Account and Settings ︱ EnergiSync</title>
+        <link rel="icon" href="media/logo/energisynclogo.png" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <!-- SIDEBAR -->
+        <section id="sidebar">
+            <ul class="menu">
+                <li>
+                    <a href="Dashboard.html">
+                        <img src="media/icons/dashboard.svg">
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="PaymentMediums.html">
+                        <img src="media/icons/mediums.svg">
+                        <span class="item">Payment Mediums</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="History.html">
+                        <img src="media/icons/history.svg">
+                        <span class="item">Consumption History</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="News.html">
+                        <img src="media/icons/news.svg">
+                        <span class="item">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="SaveEnergy.html">
+                        <img src="media/icons/saveenergy.svg">
+                        <span class="item">Save Energy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Feedback.html">
+                        <img src="media/icons/feedback.svg">
+                        <span class="item">Feedback</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="About.html">
+                        <img src="media/icons/about.svg">
+                        <span class="item">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Help.html">
+                        <img src="media/icons/help.svg">
+                        <span class="item">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+       <!-- HEADER -->
+       <div class="block"></div>
+       <header id="hdr">
+           <section id="topbar">
+               <a href="Dashboard.html" class="brand">
+                   <img src="media/logo/energisynclogo.png">
+               </a>
+               <div class="menu-btn">
+                   <img src="media/icons/menu.svg">              
+               </div>
+               <div class="section">
+                   <h4>ACCOUNT AND SETTINGS</h4>
+               </div>
+               <div class="nav">
+                   <a href="Calendar.html">
+                       <img class="calendar-icon" src="media/icons/calendar.svg">
+                   </a>
+                   <a href="Notifications.html">
+                       <img class="notification-icon" src="media/icons/notification.svg">
+                   </a>
+               </div>
+           </section>
+       </header>
+        <!-- CONTENT -->
+        <section id="content">
+            <div class="accountandsettings">
+                <div class="leftbox">
+                    <nav>
+                        <hr id="accinfo">
+                        <a onclick="tabs(0)" class="tab active">Your information</a>
+                        <hr id="sec">
+                        <a onclick="tabs(1)" class="tab">Security</a>
+                        <hr id="tandp">
+                        <a onclick="tabs(2)" class="tab">Terms and legal policies</a>
+                    </nav>
+                </div>
+                <div class="rightbox">
+                    <div class="profile tabShow">
+                        <h1>Account Info</h1>
+                        <h2>Account Number</h2>
+                        <div class="value">
+                            <input type="text" id="user-name" disabled>
+                        </div>
+                        <h2>Email</h2>
+                        <div class="value">
+                            <input type="text" id="user-email" disabled>
+                        </div>
+                    </div>
+                    <div class="security tabShow" style="display: block;">
+                        <h1>Password</h1>
+                        <form>
+                            <h2>Change password</h2>
+                            <div class="input-wrap">
+                                <input type="password" id="oldPasswordInp" class="input cpassword" placeholder="Current password" autocomplete="off" spellcheck="false" required>
+                                <div class="vl"></div>
+                                <img id="notvisible1" src="media/icons/hidden.svg">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="password" id="newPasswordInp" class="input cpassword" placeholder="New password" autocomplete="off" spellcheck="false" required>
+                                <div class="vl"></div>
+                                <img id="notvisible2" src="media/icons/hidden.svg">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="password" id="confirmPasswordInp" class="input cpassword" placeholder="Confirm new password" autocomplete="off" spellcheck="false" required>
+                                <div class="vl"></div>
+                                <img id="notvisible3" src="media/icons/hidden.svg">
+                            </div>
+                            <button type="button" id="changePassBtn" class="btn" disabled>Update</button>
+                        </form>
+                    </div>
+                    <div class="privacy tabShow" style="display: block;">
+                        <h1>Terms and Policies</h1>
+                        <a href="TermsOfService.html" target="_blank">
+                            <h2 class="terms">Terms of service</h2>
+                            <p></p>
+                        </a>
+                        <a href="PrivacyPolicy.html" target="_blank">
+                            <h2 class="policy">Privacy policy</h2>
+                            <p></p>
+                        </a>
+                    </div>
+                    <button type="button" class="signout-btn" id="btn3">Sign out</button>
+                </div>
+            </div>
+        </section>
+        <script>
+        // SHOW/HIDE PASSWORD
+            let notvisible1 = document.getElementById("notvisible1");
+            let notvisible2 = document.getElementById("notvisible2");
+            let notvisible3 = document.getElementById("notvisible3");
+            let opassword = document.getElementById("oldPasswordInp");
+            let npassword = document.getElementById("newPasswordInp");
+            let cnpassword = document.getElementById("confirmPasswordInp");
+
+            notvisible1.onclick = function() {
+            if(opassword.type == "password") {
+                opassword.type = "text";
+                notvisible1.src = "media/icons/visible.svg";
+            }
+            else {
+                opassword.type = "password";
+                notvisible1.src = "media/icons/hidden.svg";
+            }}
+
+            notvisible2.onclick = function() {
+            if(npassword.type == "password") {
+                npassword.type = "text";
+                notvisible2.src = "media/icons/visible.svg";
+            }
+            else {
+                npassword.type = "password";
+                notvisible2.src = "media/icons/hidden.svg";
+            }}
+
+            notvisible3.onclick = function() {
+            if(cnpassword.type == "password") {
+                cnpassword.type = "text";
+                notvisible3.src = "media/icons/visible.svg";
+            }
+            else {
+                cnpassword.type = "password";
+                notvisible3.src = "media/icons/hidden.svg";
+            }}
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
