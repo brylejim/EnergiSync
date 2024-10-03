@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar ︱ EnergiSync</title>
+        <link rel="icon" href="media/logo/energisynclogo.png" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    </head>
+    <body>
+        <!-- SIDEBAR -->
+        <section id="sidebar">
+            <ul class="menu">
+                <li>
+                    <a href="admDashboard.html">
+                        <img src="media/icons/dashboard.svg">
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAccount.html">
+                        <img src="media/icons/account.svg">
+                        <span class="item">Accounts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admNews.html">
+                        <img src="media/icons/news.svg">
+                        <span class="item">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admFeedback.html">
+                        <img src="media/icons/feedback.svg">
+                        <span class="item">Feedback</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAbout.html">
+                        <img src="media/icons/about.svg">
+                        <span class="item">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admHelp.html">
+                        <img src="media/icons/help.svg">
+                        <span class="item">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- HEADER -->
+        <div class="block"></div>
+        <header id="hdr">
+            <section id="topbar">
+                <a href="admDashboard.html" class="brand">
+                    <img src="media/logo/energisynclogo.png">
+                </a>
+                <div class="menu-btn">
+                    <img src="media/icons/menu.svg">              
+                </div>
+                <div class="section">
+                    <h4>CALENDAR</h4> 
+                </div>
+                <div class="nav">
+                    <a href="admNotifications.html">
+                        <img class="notification-icon" src="media/icons/notification.svg">
+                    </a>
+                    <div class="profile-btn">
+                        <a href="admAccountAndSettings.html"><img class="profile-icon" src="media/icons/profile.svg"></a>
+                    </div>
+               </div>
+            </section>
+        </header>
+        <!-- CONTENT -->
+        <section id="content">
+            <div class="container">
+                <div class="calendar">
+                  <div class="header">
+                    <div class="month"></div>
+                    <div class="btns">
+                      <div class="btn today-btn">
+                        <i class="fas fa-calendar-day"></i>
+                      </div>
+                      <div class="btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                      </div>
+                      <div class="btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="weekdays">
+                    <div class="day">Sun</div>
+                    <div class="day">Mon</div>
+                    <div class="day">Tue</div>
+                    <div class="day">Wed</div>
+                    <div class="day">Thu</div>
+                    <div class="day">Fri</div>
+                    <div class="day">Sat</div>
+                  </div>
+                  <div class="days">
+                  </div>
+                </div>
+              </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>

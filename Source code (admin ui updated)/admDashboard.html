@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard ︱ EnergiSync</title>
+        <link rel="icon" href="media/logo/energisynclogo.png" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <!-- SIDEBAR -->
+        <section id="sidebar">
+            <ul class="menu">
+                <li>
+                    <a href="admDashboard.html" class="active">
+                        <img src="media/icons/dashboard.svg">
+                        <span class="item">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAccount.html">
+                        <img src="media/icons/account.svg">
+                        <span class="item">Accounts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admNews.html">
+                        <img src="media/icons/news.svg">
+                        <span class="item">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admFeedback.html">
+                        <img src="media/icons/feedback.svg">
+                        <span class="item">Feedback</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admAbout.html">
+                        <img src="media/icons/about.svg">
+                        <span class="item">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admHelp.html">
+                        <img src="media/icons/help.svg">
+                        <span class="item">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- HEADER -->
+        <div class="block"></div>
+        <header id="hdr">
+            <section id="topbar">
+                <a href="admDashboard.html" class="brand">
+                    <img src="media/logo/energisynclogo.png">
+                </a>
+                <div class="menu-btn">
+                    <img src="media/icons/menu.svg">              
+                </div>
+                <div class="section">
+                    <h4>DASHBOARD</h4> 
+                </div>
+                <div class="nav">
+                    <a href="admCalendar.html">
+                        <img class="calendar-icon" src="media/icons/calendar.svg">
+                    </a>
+                    <a href="admNotifications.html">
+                        <img class="notification-icon" src="media/icons/notification.svg">
+                    </a>
+                    <a href="admAccountAndSettings.html">
+                        <img class="profile-icon" src="media/icons/profile.svg">
+                    </a>
+                </div>
+            </section>
+        </header>
+        <!-- CONTENT -->
+        <section id="content">
+            <main class="admdashboard">
+                <div class="box-container">
+                    <ul class="info">
+                        <li class="numberofusers">
+                            <div class="icon">
+                                <img src="media/icons/usercount.svg">
+                            </div>
+                            <div class="text">
+                                <div id="userCount"></div>
+                                <span>Number of users</span> 
+                            </div>
+                        </li>
+                        <li class="thismonth">
+                            <div class="icon">
+                                <img src="media/icons/usage.svg">
+                            </div>
+                            <div class="text">
+                                <h3>1420 kWh</h3> <!-- NEED DATABASE -->
+                                <span>This month</span>
+                            </div>
+                        </li>
+                        <li class="outagealert">
+                            <div class="icon">
+                                <img src="media/icons/alert.svg">
+                            </div>
+                            <div class="text">
+                                <h3>0</h3> <!-- NEED DATABASE -->
+                                <span>Outage Alert</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div> 
+                <!-- LIST OF USERS -->
+                <hr class="brdr1">
+                <div class="gotomaintenance">
+                    <div class="layer">
+                        <button class="acc-btn" onclick="openPopup()">Maintenance   <b>></b></button>
+                    </div>
+                    <div class="popup" id="popup">
+                        <h2>Are you sure you want to enter maintenance mode?</h2>
+                        <div class="btns">
+                            <button class="button-no" type="button" onclick="closePopup()">No</button>
+                            <button class="button-yes" type="submit">Yes</button>
+                        </div>
+                    </div>  
+                </div>
+                <hr class="brdr2">
+            </main>
+        </section>
+        <script>
+            let popup = document.getElementById('popup')
+
+            function openPopup(){
+            popup.classList.add('open-popup')
+            }
+
+            function closePopup(){
+            popup.classList.remove('open-popup')
+            }
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
